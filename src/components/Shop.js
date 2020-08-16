@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import PlantCard from './PlantCard';
 
 function mapStateToProps(state){
     return{ plants: state.plants}
@@ -11,7 +12,7 @@ const connectedShop = ({plants}) => {
                 <h1>This is a shop</h1>
                 <ul>
                     {plants.map((plant) => {
-                       return <li key={plant.id}>{plant.name}</li>
+                       return <PlantCard key={plant.id} plant={plant} />
                     })}
                 </ul>
             </>
